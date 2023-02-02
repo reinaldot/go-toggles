@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ft-data
+  labels:
+    app: ft-poc
+data:
+  release-toggles: |-
+    key-1000:
+      percentage: 100
+      true: "key-1000"
+      false: ""
+      default: ""
+      # rule: "key eq \"user-C\""
+      disable: true
+      trackEvents: true
+      version: 1
+      rollout:
+        scheduled:
+          steps:
+            - date: 2022-12-28T12:00:00.00-03:00
+              disable: false
+    key-2000:
+      percentage: 100
+      true: "key-2000"
+      false: ""
+      default: ""
+      # rule: "key eq \"user-C\""
+      disable: true
+      trackEvents: true
+      version: 1
+      rollout:
+        scheduled:
+          steps:
+            - date: 2022-12-28T12:00:00.00-03:00
+              disable: true
+    key-3000:
+      percentage: 100
+      true: "key-3000"
+      false: ""
+      default: ""
+      # rule: "key eq \"user-C\""
+      disable: true
+      trackEvents: true
+      version: 1
+      rollout:
+        scheduled:
+          steps:
+            - date: 2022-12-28T12:00:00.00-03:00
+              disable: false
